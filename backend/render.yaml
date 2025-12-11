@@ -1,7 +1,7 @@
 services:
   - type: web
     name: i-need-money
-    rootDir: backend
+    rootDir: .
     env: docker
     plan: free
     dockerfilePath: Dockerfile
