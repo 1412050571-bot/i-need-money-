@@ -4,6 +4,7 @@ WORKDIR /app
 # Copy Maven wrapper and config first to leverage Docker layer caching
 COPY mvnw mvnw.cmd pom.xml ./
 COPY .mvn .mvn
+RUN chmod +x mvnw
 
 # Pre-fetch dependencies
 RUN ./mvnw -B dependency:go-offline
