@@ -9,10 +9,9 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 INSERT INTO users (email, password, display_name, role)
-VALUES (
+SELECT
     '1412050571@qq.com',
     '$2a$10$wqZMM.XpLbcuFIofI5Pqke7bELGFYRP8klY1SPX3t1Z6DsoxCEVre', -- password: 123456
     '演示用户',
     'USER'
-)
-ON DUPLICATE KEY UPDATE email = email;
+WHERE NOT EXISTS (SELECT 1 FROM users WHERE email = '1412050571@qq.com');
