@@ -16,7 +16,7 @@ spring:
     init:
       mode: always
   flyway:
-    enabled: ${FLYWAY_ENABLED:true}
+    enabled: ${FLYWAY_ENABLED:false}
     locations: classpath:db/migration
   mail:
     host: smtp.qq.com
