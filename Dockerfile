@@ -8,9 +8,9 @@ COPY .mvn .mvn
 # Pre-fetch dependencies
 RUN ./mvnw -B dependency:go-offline
 
-# Copy source and build
+# Copy source and build a bootable jar (repackage adds Main-Class)
 COPY src src
-RUN ./mvnw -B package -DskipTests
+RUN ./mvnw -B clean package -DskipTests spring-boot:repackage
 
 FROM eclipse-temurin:17-jre
 WORKDIR /app
