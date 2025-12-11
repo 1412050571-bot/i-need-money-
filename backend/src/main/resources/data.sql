@@ -14,4 +14,5 @@ SELECT
     '$2a$10$wqZMM.XpLbcuFIofI5Pqke7bELGFYRP8klY1SPX3t1Z6DsoxCEVre', -- password: 123456
     '演示用户',
     'USER'
+FROM DUAL
 WHERE NOT EXISTS (SELECT 1 FROM users WHERE email = '1412050571@qq.com');
