@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: i-need-money
+    rootDir: .
+    env: java
+    buildCommand: ./mvnw package -DskipTests
+    startCommand: java -jar target/todo-0.0.1-SNAPSHOT.jar
